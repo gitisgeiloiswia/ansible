@@ -1,0 +1,13 @@
+---
+- hosts: all
+  vars:
+   nginx_package_name: "nginx"
+   nginx_version: "1.12.1"
+  
+  tasks: 
+    - name: Install nginx in version {{nginx_version}}
+      yum: 
+        name={{nginx_package_name}}-{{nginx_version}} 
+        state=present
+
+

@@ -1,0 +1,11 @@
+---
+- hosts: all
+
+- name: Include playbook install_packages
+  import_playbook: install_packages.yml
+
+- name: Include playbook motd
+  import_playbook: motd.yml
+
+- name: Include playbook usermanagement
+  import_playbook: usermanagement.yml

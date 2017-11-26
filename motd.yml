@@ -1,0 +1,22 @@
+---
+- hosts: all
+  vars:
+    # Default ASCII art shown at the beginning of the motd
+    motd_ascii_art: "     _              _ _     _\n    / \\   _ __  ___(_) |__ | | ___\n   / _ \\ | '_ \\/ __| | '_ \\| |/ _ \\\n  / ___ \\| | | \\__ \\ | |_) | |  __/\n /_/   \\_\\_| |_|___/_|_.__/|_|\\___|\n"
+
+    # Default information to show under the ASCII art
+    motd_info:
+      - " Group Name:    ": "Openstack"
+      - " Surname:       ": "Ebner-Genis-Schulz"
+      - " Lecturer:      ": "Christoph Kappel"
+      - " Last tool-run: ": "absolute no idea"
+      - " Change me:     ": "change me"
+  tasks:
+    - name: Pico MOTD
+      template:
+           src: motd.j2
+           dest: /etc/motd
+      become: true
+      
+  tags:
+    - motd_config
