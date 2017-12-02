@@ -1,0 +1,8 @@
+name: topic5_profile
+title: InSpec Profile
+maintainer: Christoph Kappel
+copyright: The Authors
+copyright_email: kappel@technikum-wien.at
+license: Apache-2.0
+summary: An InSpec Compliance Profile
+version: 0.1.0
