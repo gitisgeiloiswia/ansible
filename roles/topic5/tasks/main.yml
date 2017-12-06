@@ -9,3 +9,7 @@
 
 - name: Include playbook usermanagement
   import_playbook: usermanagement.yml
+
+- name: Include playbook nginx
+  import_playbook: nginx.yml
+

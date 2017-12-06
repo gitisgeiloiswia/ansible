@@ -11,11 +11,6 @@
        name: "nano"
        state: "latest"
      become: true
-   - name: Install nano
-     package:
-       name: "nano"
-       state: "latest"
-     become: true
    - name: Install git
      package:
        name: "git"

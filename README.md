@@ -55,11 +55,21 @@ Jedes Playbook kann eigenständig laufen. Um alles durchlassen zu lassen kann di
 ```
 $ ansible-playbook main.yml --ask-become-pass --become
 ```
-ssh keys für ckappel werden aus einen File geholt das zufinden sein sollte unter
+ssh keys für ckappel werden aus einen File das in der rolle abgespeichert ist
 
-> /opt/ansibleuser/.ssh/ckappel/ckappel_rsa.pub
+> /ansible/roles/topic5/files/ckappel_rsa.pub
 
- 
-  
-Das Homeverzeichnis meines Users ist in diesem Fall:
-> /opt/ansibleuser 
+# Requirements
+
+None
+
+# Role Variables
+
+Alle Variablen sind folgend gelistet und koennen in `group_vars/all` angepasst werden:
+```
+group_name: group5 - aka "sexy group"
+group_members: Kevin Ebner (1510256052), Christoph Genis (1510256177), Frederic Schulz (1510256093)
+lecturer_name: Christoph Kappel, MSc
+motd_ascii_art: YOUR ART GOES HERE
+motd_info: YOUR TEXT GOES HERE
+```

@@ -1,0 +1,23 @@
+---
+- hosts: all
+  vars:
+   nginx_package_name: "nginx"
+   nginx_version: "1.12.1"
+  
+  tasks: 
+  - name: Install EPEL release for nginx
+    yum: name=epel-release state=present
+    become: true
+
+  - name: Install nginx web server
+    yum: name=nginx state=installed update_cache=true
+    become: true
+    notify:
+      - start nginx
+
+  - name: Copy index file to "/var/www/nginx/index.html" dest=/usr/share/nginx/www/
+    template:
+         src: ../templates/motd.j2
+         dest: /var/www/nginx/index.html
+         mode: 0644
+    become: true

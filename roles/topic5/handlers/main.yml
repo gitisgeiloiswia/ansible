@@ -1,0 +1,7 @@
+---
+
+- name: Restart sshd
+  service: name=sshd enabled=yes state=restarted
+
+- name: Restart nginx
+  service: name=nginx enabled=yes state=restarted

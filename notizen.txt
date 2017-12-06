@@ -1,0 +1,10 @@
+sudo apt-get install ruby2.3 ruby2.3-dev ruby-dev
+# vagrant von https://www.vagrantup.com/downloads.html laden
+mkdir vorlage
+cd vorlage
+git clone https://github.com/dev-sec/ansible-os-hardening.git
+bundle install
+sudo apt-get install virtualbox=4.3.36-dfsg-1+deb8u1ubuntu1.14.04.1
+sudo apt-get install virtualbox-dkms
+
+
