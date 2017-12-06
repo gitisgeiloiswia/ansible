@@ -1,4 +1,11 @@
 # Ansible exercise (Topic 5)
+
+#### Note:
+> there is also another branch called 'role_fail' which is better in any
+> way, excelpt thaat it's not working properly. there we tried to
+> implement roles but failed because we got something wrong about roles
+> and playbooks. we don't know what it is.
+
 ---
 #### Write an ansible role to configure an CentOS 7.4 System with following state:
 - ##### OpenSSH Server in latest version should be installed (3 PTS)

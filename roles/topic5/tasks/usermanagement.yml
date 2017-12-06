@@ -45,3 +45,7 @@
       lineinfile: dest=/etc/sudoers
                   regexp="^animmervoll"
                   state=absent
+
+- handlers:
+  - name: Restart sshd
+    service: name=sshd enabled=yes state=restarted
