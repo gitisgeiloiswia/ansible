@@ -1,15 +1,21 @@
----
-- hosts: all
 
-- name: Include playbook install_packages
-  import_playbook: install_packages.yml
+#- include_role: install_packages.yml
+#
+#- include_role: motd.yml
+#
+#- include_role: usermanagement.yml
+#
+#- include_role: nginx.yml
 
-- name: Include playbook motd
-  import_playbook: motd.yml
+- include: usermanagement.yml
+  tags: usermanagement
 
-- name: Include playbook usermanagement
-  import_playbook: usermanagement.yml
+- include: install_packages.yml
+  tags: install_packages
 
-- name: Include playbook nginx
-  import_playbook: nginx.yml
+- include: motd.yml
+  tags: motd
+
+- include: nginx.yml
+  tags: nginx
 

@@ -1,0 +1,11 @@
+group_name: "group5 - aka 'sexy group'"
+group_members: "Kevin Ebner (1510256052), Christoph Genis (1510256177), Frederic Schulz (1510256093)"
+lecturer_name: "Christoph Kappel, MSc"
+
+motd_ascii_art: "̿' ̿'\̵͇̿̿\з=(◕_◕)=ε/̵͇̿̿/'̿'̿ ̿"
+motd_info:
+  - " Group Name:    ": "Openstack"
+  - " Surname:       ": "Ebner-Genis-Schulz"
+  - " Lecturer:      ": "Christoph Kappel"
+  - " Last tool-run: ": "absolute no idea"
+  - " Change me:     ": "change me"

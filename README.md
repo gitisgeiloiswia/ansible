@@ -38,16 +38,18 @@
   - TLS 1.2 is allowed
   - RC4 is not allowed
   - serves a index.html under /var/www/nginx/index.html
-  - with your group name 
-  - your group members
-  - the name of the lecturer
-  - the date of the last run,
+    - with your group name
+    - your group members
+    - the name of the lecturer
+    - the date of the last run,
   - Example:
 	> GROUP2
+
 	> ALABA-ARNAUTOVIC-PROEDL
+
 	> KAPPEL,CHRISTOPH
+
 	> 01.01.2011
-	> Change me
 - ##### Service nginx must be running (1 PTS)
 
 ## Anleitung
@@ -61,7 +63,7 @@ ssh keys für ckappel werden aus einen File das in der rolle abgespeichert ist
 
 # Requirements
 
-None
+ansible>=2.4.2.0
 
 # Role Variables
 

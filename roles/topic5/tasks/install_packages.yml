@@ -1,33 +1,32 @@
 ---
-- hosts: all
-  tasks:
-   - name: Install vim
-     package:
-       name: "vim"
-       state: "latest"
-     become: true
-   - name: Install nano
-     package:
-       name: "nano"
-       state: "latest"
-     become: true
-   - name: Install git
-     package:
-       name: "git"
-       state: "latest"
-     become: true
-   - name: Install vi
-     package:
-       name: "vi"
-       state: "latest"
-     become: true
-   - name: Install tree
-     package:
-       name: "tree"
-       state: "latest"
-     become: true
-   - name: Install rsyslog
-     package:
-       name: "rsyslog"
-       state: "latest"
-     become: true
+
+- name: Install vim
+  package:
+    name: "vim"
+    state: "latest"
+  become: true
+- name: Install nano
+  package:
+    name: "nano"
+    state: "latest"
+  become: true
+- name: Install git
+  package:
+    name: "git"
+    state: "latest"
+  become: true
+- name: Install vi
+  package:
+    name: "vi"
+    state: "latest"
+  become: true
+- name: Install tree
+  package:
+    name: "tree"
+    state: "latest"
+  become: true
+- name: Install rsyslog
+  package:
+    name: "rsyslog"
+    state: "latest"
+  become: true

@@ -1,47 +1,45 @@
 ---
-- hosts: all
-  become: true
-  tasks:
-    - name: Make sure user "ckappel" is present
-      user:
-        name: ckappel
-        shell: /bin/bash
-        home: /home/linuxguru
-        state: present
 
-    - name: Enable Sudo for user "ckappel"
-      lineinfile: dest=/etc/sudoers
-                  line="ckappel ALL=(ALL) NOPASSWD{{ ":" }} ALL"
-                  state=present
+- name: Make sure user "ckappel" is present
+  user:
+    name: 'ckappel'
+    shell: '/bin/bash'
+    home: '/home/linuxguru'
+    state: 'present'
 
-    - name: Set authorized key took from file
-      authorized_key:
-        user: ckappel
-        state: present
-        #key: "{{ lookup('file', '/opt/ansibleuser/.ssh/ckappel/ckappel_rsa.pub') }}"
-        key: "{{ lookup('file', '../files/ckappel_rsa.pub') }}"
+- name: Enable Sudo for user "ckappel"
+  lineinfile: dest='/etc/sudoers'
+              line='"ckappel ALL=(ALL) NOPASSWD{{ ":" }} ALL"'
+              state='present'
 
-    - name: Allow publicKey Authenification
-      lineinfile: dest=/etc/ssh/sshd_config
-                  regexp="^PubkeyAuthentication"
-                  line="PubkeyAuthentication yes"
-                  state=present
+- name: Set authorized key took from file
+  authorized_key:
+    user: 'ckappel'
+    state: 'present'
+    #key: "{{ lookup('file', '/opt/ansibleuser/.ssh/ckappel/ckappel_rsa.pub') }}"
+    key: "{{ lookup('file', '../files/ckappel_rsa.pub') }}"
 
-    - name: Allow root SSH access
-      lineinfile: dest=/etc/ssh/sshd_config
-                  regexp="^PermitRootLogin"
-                  line="PermitRootLogin no"
-                  state=present
-      notify: Restart sshd
+- name: Allow publicKey Authenification
+  lineinfile: dest='/etc/ssh/sshd_config'
+              regexp="^PubkeyAuthentication"
+              line="PubkeyAuthentication yes"
+              state='present'
 
-    - name: Make sure user "animmervoll" is absent
-      user:
-        name: animmervoll
-        shell: /bin/bash
-        home: /home/nimm
-        state: absent
+- name: Allow root SSH access
+  lineinfile: dest='/etc/ssh/sshd_config'
+              regexp="^PermitRootLogin"
+              line="PermitRootLogin no"
+              state='present'
+  notify: Restart sshd
 
-    - name: Disable Sudo for user "animmervoll"
-      lineinfile: dest=/etc/sudoers
-                  regexp="^animmervoll"
-                  state=absent
+- name: Make sure user "animmervoll" is absent
+  user:
+    name: 'animmervoll'
+    shell: '/bin/bash'
+    home: '/home/nimm'
+    state: 'absent'
+
+- name: Disable Sudo for user "animmervoll"
+  lineinfile: dest='/etc/sudoers'
+              regexp="^animmervoll"
+              state='absent'
